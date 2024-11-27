@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire - Violence Psychologique</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F2E4EE;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #8C3A76;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .question p {
+            font-size: 18px;
+            font-weight: 500;
+            color: #8C3A76;
+        }
+        .options label {
+            display: block;
+            margin: 10px 0;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            background-color: #8C3A76;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #6c2b73;
+        }
+        .result {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #8C3A76;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Êtes-vous victime de violence psychologique ?</h1>
+        <p>
+            Ce formulaire vous aide à identifier des comportements pouvant être nocifs pour votre bien-être émotionnel. 
+            Prenez le temps de répondre à ces questions pour mieux comprendre votre situation.
+        </p>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1) Y a-t-il des personnes ou des situations qui vous mettent particulièrement mal à l’aise ?</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="A"> Mon partenaire</label>
+                    <label><input type="radio" name="q1" value="B"> Un membre de ma famille</label>
+                    <label><input type="radio" name="q1" value="C"> Des collègues ou mon supérieur au travail</label>
+                    <label><input type="radio" name="q1" value="D"> Mes amis</label>
+                    <label><input type="radio" name="q1" value="E"> Personne en particulier</label>
+                </div>
+            </div>
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2) Ressentez-vous souvent que votre opinion, vos idées, ou vos sentiments sont ignorés ou minimisés ?</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="A"> Oui, souvent</label>
+                    <label><input type="radio" name="q2" value="B"> Parfois</label>
+                    <label><input type="radio" name="q2" value="C"> Rarement</label>
+                    <label><input type="radio" name="q2" value="D"> Non, jamais</label>
+                </div>
+            </div>
+            <!-- Ajouter plus de questions de la même manière -->
+            <!-- Bouton de soumission -->
+            <button type="button" onclick="submitQuiz()">Voir Résultat</button>
+        </form>
+        <!-- Zone des résultats -->
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            // Récupérer les réponses
+            const form = document.getElementById('quizForm');
+            const answers = new FormData(form);
+            let score = 0;
+
+            // Points pour chaque réponse (exemple)
+            if (answers.get('q1') === 'A') score += 2;
+            if (answers.get('q2') === 'A') score += 2;
+            if (answers.get('q2') === 'B') score += 1;
+
+            // Afficher le résultat
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+
+            if (score >= 4) {
+                resultDiv.textContent = "Vous pourriez être victime de violence psychologique. N'hésitez pas à demander de l'aide.";
+            } else if (score > 2) {
+                resultDiv.textContent = "Certains signes pourraient indiquer un malaise. Prenez soin de vous et consultez si besoin.";
+            } else {
+                resultDiv.textContent = "Aucun signe clair de violence psychologique n'est détecté, mais restez vigilant(e).";
+            }
+        }
+    </script>
+</body>
+</html>
