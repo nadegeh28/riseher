@@ -1,0 +1,112 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #F2E4EE;
+}
+
+header, footer {
+    background-color: #8C3A76;
+    color: white;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a.active {
+    color: #F8C1D9;
+}
+
+.main-content h1 {
+    font-family: 'Dancing Script', cursive;  
+    text-align: center;
+    margin: 50px 0;
+    color: #8C3A76;
+}
+
+.intro-text {
+    text-align: center;
+    padding: 0 10%;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color : #8C3A76;
+}
+
+.testimony-container {
+    background-color: #8C3A76;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.testimony-container p {
+    margin: 10px;
+}
+
+.username {
+    font-weight: bold;
+    color: #F8C1D9;
+}
+
+hr.custom-line {
+    width: 60%;
+    margin: 20px auto;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+.add-testimony {
+    background-color: #8C3A76;
+    padding: 20px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.add-testimony textarea {
+    width: 90%;
+    height: 150px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.add-testimony button {
+    background-color: #8C3A76;
+    color: #F2E4EE;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-testimony button:hover {
+    background-color: #8C3A76;  
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
